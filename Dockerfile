@@ -6,16 +6,16 @@ RUN yum -y clean all;
 #SET UP THE ENVIRONNEMENT
 RUN yum install -y  wget dialog curl sudo lsof vim telnet nano openssh-server openssh-clients bzip2 passwd tar bc git unzip
 #INSTALL JAVA 1.8
-RUN yum install -y java-1.8.0-openjdk java-1.8.0-openjdk-devel 
+RUN yum install -y java-1.8.0-openjdk java-1.8.0-openjdk-devel
 
 #CREATE USER
 RUN useradd guest -u 1000
 RUN echo guest | passwd guest --stdin
 
 
-#INSTALL PYTHON 2.7 
+#INSTALL PYTHON 2.7
 RUN yum install -y python27
-# #INSTALL PYTHON 3.6 
+# #INSTALL PYTHON 3.6
 RUN yum install -y python36
 
 ENV HOME /home/guest
@@ -37,8 +37,8 @@ RUN tar xvzf sbt-1.4.1.tgz
 RUN mv sbt-1.4.1.tgz sbt
 
 
-# SET ENVIRONNEMENT ALIASES 
-ADD setenv.sh /home/guest/setenv.sh 
+# SET ENVIRONNEMENT ALIASES
+ADD setenv.sh /home/guest/setenv.sh
 RUN chown guest:guest setenv.sh
 RUN echo . ./setenv.sh >> .bashrc
 # SET ENVIRONNEMENT VARIABLES
@@ -62,6 +62,6 @@ COPY ./ha.conf $HOME/spark/sbin/ha.conf
 EXPOSE 8080
 
 # RUN THE STARTUP SCRIPT
-CMD [ "startup_script.sh" ]
+# CMD [ "startup_script.sh" ]
 
 
