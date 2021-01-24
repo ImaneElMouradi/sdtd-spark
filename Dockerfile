@@ -62,6 +62,6 @@ COPY ./ha.conf $HOME/spark/sbin/ha.conf
 EXPOSE 8080
 
 # RUN THE STARTUP SCRIPT
-# CMD [ "startup_script.sh" ]
+CMD [ "startup_script.sh" ]
 
 
