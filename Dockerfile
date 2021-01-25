@@ -58,8 +58,7 @@ COPY ./StreamHandler $HOME/StreamHandler
 # HIGH AVAILABILITY CONFIG
 COPY ./ha.conf $HOME/spark/sbin/ha.conf
 
-# WEB UI SPARK
-EXPOSE 8080
+EXPOSE 8080 7077
 
 # RUN THE STARTUP SCRIPT
 CMD [ "startup_script.sh" ]
