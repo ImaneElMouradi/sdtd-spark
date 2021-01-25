@@ -55,8 +55,6 @@ RUN chmod +x /usr/local/bin/startup_script.sh
 # ADD APP
 COPY ./StreamHandler $HOME/StreamHandler
 
-# HIGH AVAILABILITY CONFIG
-COPY ./ha.conf $HOME/spark/sbin/ha.conf
 
 EXPOSE 8080 7077
 
