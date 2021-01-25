@@ -59,6 +59,6 @@ COPY ./StreamHandler $HOME/StreamHandler
 EXPOSE 8080 7077
 
 # RUN THE STARTUP SCRIPT
-CMD [ "startup_script.sh" ]
+# CMD [ "startup_script.sh" ]
 
 
